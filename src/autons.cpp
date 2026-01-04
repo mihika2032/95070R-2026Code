@@ -17,7 +17,7 @@ void SkillsAuton(){
   drivePID(5, setting);
   turnPID(-90,0.26,0,0);
   drivePID(24);
-  turnPID(-56,0.26,0,0);
+  turnPID(-53,0.26,0,0);
   drivePID(-12);
   Arm2.spin(forward,100,percent); 
   wait(3, sec);
