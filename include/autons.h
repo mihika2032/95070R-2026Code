@@ -3,7 +3,7 @@
 
 
 //Autons//
-void rightAuton();
-void leftAuton();
-void skillsAuton();
+void  SkillsAuton();
+// void  HighGoalRAuton();
+// void  HighGoalLAuton();
 

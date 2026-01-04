@@ -5,8 +5,8 @@
 
 int selectedAuton = 0;
 
-const char* autonNames[] = { "Right Auton", "Left Auton", "Skills"};
-const int autonCount = 3;
+const char* autonNames[] = { "SkillsAuton", "HighGoalRAuton", "HighGoalLAuton"};
+const int autonCount = 2;
 
 using namespace vex;
 
@@ -25,13 +25,13 @@ void displayAutonSelector() {
       selectedAuton = (selectedAuton + 1) % autonCount;
     }
 
-    if (Controller.ButtonX.pressing()) {
-      vex::task::sleep(600);
-      if (Controller.ButtonX.pressing()) {
-        Controller.rumble("..");
-        break;
-      }
-    }
+    // if (Controller.ButtonX.pressing()) {
+    //   vex::task::sleep(600);
+    //   if (Controller.ButtonX.pressing()) {
+    //     Controller.rumble("..");
+    //     break;
+    //   }
+    // }
 
     Controller.Screen.clearScreen();
     Controller.Screen.setCursor(1, 1);

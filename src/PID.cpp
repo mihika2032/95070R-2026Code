@@ -6,11 +6,12 @@
 
 using namespace vex;
 
-
-void drivePID(double targetInches, double kP = 0.7, double kI = 0.7, double kD = 1.8) {
-void drivePID(double targetInches, double kP, double kI, double kD) {
+void drivePID(double targetInches, drivePidParams param ,double kP, double kI, double kD) {
+// void drivePID(double targetInches, double kP, double kI, double kD); 
 
   double targetDegrees = inchesToDegrees(targetInches);
+
+  double maxSpeed = param.maxSpeed;
 
   setDTPosition(0); //reset encoders
 
@@ -39,8 +40,8 @@ void drivePID(double targetInches, double kP, double kI, double kD) {
     double power = (kP * error) + (kI * integral) + (kD * derivative);
 
     // Clamp output
-    if (power > 100) power = 100;
-    if (power < -100) power = -100;
+
+    if (fabs(power) > maxSpeed) power = (power / fabs(power)) * maxSpeed;
 
     spinDT(power*0.7);
     spinDT(power*0.5);
@@ -54,12 +55,12 @@ void drivePID(double targetInches, double kP, double kI, double kD) {
 
 }
 
-//WARNING:kP, kI, and kD values are not correct, need to update yourself
-void turnPID(double targetAngle, double kP = 0.12, double kI = 0.3, double kD = 0.24) {
+
+void turnPID(double targetAngle, double kP = 0.1, double kI = 0, double kD = 0.) {
   
-  double dir =targetAngle/fabs(targetAngle);
+  //double dir =targetAngle/fabs(targetAngle);
  
-void turnPID(double targetAngle, double kP, double kI, double kD) {
+void turnPID(double targetAngle, double kP, double kI, double kD) ;
 
   double dir = targetAngle/fabs(targetAngle);
   // Reset inertial and motor encoders
@@ -104,5 +105,7 @@ void turnPID(double targetAngle, double kP, double kI, double kD) {
   Controller.Screen.print(targetAngle);
 
   stopDT();
+
+}
 
 }

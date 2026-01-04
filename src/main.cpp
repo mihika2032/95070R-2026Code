@@ -59,16 +59,16 @@ void autonomous(void) {
   
   switch (getSelectedAuton()) {
     case 0:
-      rightAuton();
+      SkillsAuton();
       break;
-    case 1:
-      leftAuton();
-      break;
-    case 2:
-      skillsAuton();
-      break;
+    // case 1:
+    //   HighGoalRAuton();
+    //   break;
+    // case 2:
+    //   HighGoalLAuton();
+    //   break;
     default:
-      Brain.Screen.print("No valid auton selected!");
+      Brain.Screen.print("No valid auton selected");
       break;
   }
  
@@ -91,24 +91,81 @@ bool inauton = false;
 // Drive train functions in functions.cpp
 
 
-
-  void checkDoubleClick();
-int main();
 // User control function
 void usercontrol(void) {
-  bool slowModeActive = false;
+  bool prevPressed = false;
+  bool descorerExtended = false;
+
+  bool Prevpressed = false;
+  bool matchloaderExtended = false;
 
   while (true) {
-    // ========== DRIVE CONTROL ========== //
-    double fwd = Controller.Axis3.position(percentUnits::pct);
-    double turn = Controller.Axis1.position(percentUnits::pct);
-    double leftPower  = fwd + turn;
-    double rightPower = fwd - turn;
+     //========== DRIVE CONTROL ========== //
+    double fwd = Controller.Axis3.position();
+    double turn = Controller.Axis4.position() * 0.5;
+     
 
-    spinLeftDT(leftPower * 0.8);
-    spinRightDT(rightPower * 0.8);
-    spinLeftDT(leftPower * 0.7);
-    spinRightDT(rightPower * 0.7);
+    double leftPower = fwd + turn;
+    double rightPower = fwd - turn;
+  
+    spinLeftDT(leftPower*0.7);
+    spinRightDT(rightPower*0.7);
+   //========== ARM CONTROL ========== //
+   if (Controller.ButtonR1.pressing()) {
+     Arm1.spin(forward, 100, percent);
+     Arm2.spin(forward, 100, percent);
+     } 
+     else if (Controller.ButtonR2.pressing()) {
+      Arm1.spin(reverse, 100, percent);
+      Arm2.spin(reverse, 100, percent);
+    } 
+    else if (Controller.ButtonL2.pressing()) {
+       Arm1.stop(hold);
+       Arm2.spin(forward, 100, percent);
+    }
+    else if (Controller.ButtonL1.pressing()) {
+       Arm2.stop(hold);
+       Arm1.spin(forward, 100, percent);
+    }
+    else {
+       Arm1.stop(brake);
+       Arm2.stop(brake);
+     }
+
+    if (Controller.ButtonUp.pressing() && !prevPressed){
+      descorerExtended = !descorerExtended;
+      prevPressed = true;
+      descorer.set(descorerExtended);
+    }
+    
+    if (!Controller.ButtonUp.pressing() && prevPressed){
+      prevPressed = false;
+    }
+if (Controller.ButtonDown.pressing() && !Prevpressed){
+      matchloaderExtended = !matchloaderExtended;
+      Prevpressed = true;
+      matchloader.set(matchloaderExtended);
+    }
+    
+    if (!Controller.ButtonDown.pressing() && Prevpressed){
+      Prevpressed = false;
+    }
+    //hw: different variable names to avoid confusion and make logic work
+
+    // if (Controller.ButtonA.pressing() && !prevPressed){
+    //   pistonExtended = !pistonExtended;
+    //   prevPressed = true;
+    //   mlm.set(pistonExtended);
+    // }
+
+    // if (!Controller.ButtonA.pressing() && prevPressed){
+    //   prevPressed = false;
+    // }
+
+    wait(20, msec);
+  }
+}
+
 
     // ========== ARM CONTROL ========== //
    // if (Controller.ButtonR1.pressing()) {
@@ -122,7 +179,7 @@ void usercontrol(void) {
      // Arm2.stop(hold);
     //}
 
-    // ========== INTAKE ========== //
+    /*// ========== INTAKE ========== //
     //out put for the intake//
     if (Controller.ButtonL1.pressing()) {
     bottomIntakeMotor.spin(forward, 100, percent);
@@ -141,13 +198,13 @@ void usercontrol(void) {
         middleIntakeMotor.stop();
         topIntakeMotor.stop();
       }
-    }
+    }*/
 
   
   
    
     
-    // ========== COLOR SENSOR ========== //
+    /*// ========== COLOR SENSOR ========== //
     color detectedColor = OpticalSensor.color();
     if (detectedColor == color::blue) {
       Brain.Screen.printAt(50, 50, "Blue Detected!");
@@ -170,7 +227,7 @@ void usercontrol(void) {
 //void driver controll(){
 //doble forwards = Controller1.Axis2.position();
 //doble turning = Controller1.Axis4}
-
+*/
   
 
 // Entry point
