@@ -8,46 +8,115 @@
 using namespace vex;
 
 
-//red left side of the field//
-void rightAuton() 
-{
-runIntake();
-  drivePID(20, 0.15, 0, 0.01);
-turnPID(-130, 0.15, 0, 0);
-drivePID(40, 0.15, 0, 0.01);
-//stopIntake();
-//runIntake();
-void rightAuton() {
-  spinDTPosition(100, 24);
-  turnForTime(100, 300);
+void SkillsAuton(){
+//void SkillsScore&Park(){
+  drivePidParams setting = {};
+  Arm1.spin(forward,100,percent);
+  drivePID(19);
+  setting.maxSpeed = 30.0;
+  drivePID(5, setting);
+  turnPID(-90,0.26,0,0);
+  drivePID(24);
+  turnPID(-56,0.26,0,0);
+  drivePID(-12);
+  Arm2.spin(forward,100,percent); 
+  wait(3, sec);
+  Arm2.stop(hold);
+  turnPID(1,0.26,0,0);
+  matchloader.set(true);
+  setting.maxSpeed = 70.0;
+  drivePID(25.5);
+  drivePID(-0.5);
+  drivePID(1);
+  drivePID(-1);
+  drivePID(1);
+  drivePID(-0.8);
+  drivePID(0.8);
+  drivePID(-0.9);
+  drivePID(0.9);
+  drivePID(-1);
+  drivePID(1);
+  Arm1.spin(forward,100,percent);
+  Arm2.spin(forward,100,percent);
+  drivePID(-10);
+  turnPID(120 ,0.26,0,0);
+  drivePID(-50);
 }
+// void SkillsParking(){
+//   drivePidParams setting = {};
+//   setting.maxspeed = 40.0;
+//   drivePID(10);
+//   drivePID(-10);
+//   drivePID(10);
+//   drivePID(-5);
+//   drivePID(5);
+
+// }
+                                                                                    
+// void HighGoalRAuton(){
+//     drivePidParams setting = {};
+//     matchloader.set(false);
+//     Arm1.spin(forward,100,percent);
+//     drivePID(19);
+//     setting.maxSpeed = 30.0;
+//     drivePID(5, setting);
+//     turnPID(-90,0.26,0,0);
+//     drivePID(22.5);
+//     turnPID(-60,0.26,0,0);
+//     drivePID(-9);
+//     Arm2.spin(forward,100,percent);
+//     wait(3, sec);
+//     Arm2.stop(hold);
+    // matchloader.set(true);
+    // drivePID(2);
+// }
+   
+   
+//void HighGoalLAuton(){
+//     drivePidParams setting = {};
+//     Arm1.spin(forward,100,percent);
+//     drivePID(19);
+//     setting.maxSpeed = 30.0;
+//     drivePID(5, setting);
+//     turnPID(90,0.26,0,0);
+//     drivePID(22.5);
+//     turnPID(67,0.26,0,0);
+//     drivePID(-8);
+//     Arm2.spin(forward, 100, percent);
+// }
+   
+    /*void VIOLA IS BETTER IYKYK(){
+      while(true){
+        if(OpticalSensor.brightness()<50){
+          bottomIntakeMotor.spin(forward,100,percent);
+          middleIntakeMotor.spin(reverse,100,percent);
+          topIntakeMotor.spin(forward,100,percent); 
+        }
+        else{
+          bottomIntakeMotor.stop();
+          middleIntakeMotor.stop();
+          topIntakeMotor.stop();
+        }
+        wait(20,msec);
+      }
+    }
+    vex::thread intakejamprevention(VIOLA IS BETTER IYKYK); */
 
 
 
-void leftAuton() {
-  drivePID(24, 0.19, 0, 0);
-  turnPID(-62, 0.8, 0, 0);
-  drivePID(24.5, 0.19, 0, 0);
-  turnPID(63, 0.8, 0, 0);
-  
-  turnPID(90, 2, 0, 0);
-}
-void skillsAuton() {
-  drivePID(12, 0.5, 0.0, 0.0);
-  turnPID(90, 0.06, 0.001, 0.3);
-  drivePID(-12, 0.5, 0.003, 0.3);
-  turnPID(90, 0.06, 0.001, 0.3);
-  drivePID(6, 0.5, 0.003, 0.3);
-  drivePID(10, 0.24, 0.00012, 0.04); 
-  //wait(234, msec);
-  turnPID(-61, 0.456789, 0.00002 ,0.15); 
-  drivePID(14.6, 0.24, 0.00012, 0.04); 
-  drivePID(-9, 0.24, 0.00012, 0.04); 
-  turnPID(105, 0.456789, 0.00002 ,0.15);
-  drivePID(23, 0.24, 0.00012, 0.04); 
-}
+// void MiddleGoalRAuton(){
+//         drivePidParams setting = {};
+//     Arm1.spin(forward,100,percent);
+//     drivePID(19);
+//     setting.maxSpeed = 30.0;
+//     drivePID(5, setting);
+//     turnPID(90,0.26,0,0);
+//     drivePID(22);
+//     turnPID(70,0.26,0,0);
+//     drivePID(-10);
+//     Arm2.spin(forward,100,percent);
 
+// }
 
-  
 
 
