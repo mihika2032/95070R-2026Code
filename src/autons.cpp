@@ -9,71 +9,87 @@ using namespace vex;
 
 
 void SkillsAuton(){
-//void SkillsScore&Park(){
-  drivePidParams setting = {};
-  Arm1.spin(forward,100,percent);
-  drivePID(19);
-  setting.maxSpeed = 30.0;
-  drivePID(5, setting);
-  turnPID(-90,0.26,0,0);
-  drivePID(24);
-  turnPID(-56,0.26,0,0);
-  drivePID(-12);
-  Arm2.spin(forward,100,percent); 
-  wait(3, sec);
-  Arm2.stop(hold);
-  turnPID(1,0.26,0,0);
-  matchloader.set(true);
-  setting.maxSpeed = 70.0;
-  drivePID(25.5);
-  drivePID(-0.5);
-  drivePID(1);
-  drivePID(-1);
-  drivePID(1);
-  drivePID(-0.8);
-  drivePID(0.8);
-  drivePID(-0.9);
-  drivePID(0.9);
-  drivePID(-1);
-  drivePID(1);
-  Arm1.spin(forward,100,percent);
-  Arm2.spin(forward,100,percent);
-  drivePID(-10);
-  turnPID(120 ,0.26,0,0);
-  drivePID(-50);
-}
-// void SkillsParking(){
-//   drivePidParams setting = {};
-//   setting.maxspeed = 40.0;
-//   drivePID(10);
-//   drivePID(-10);
-//   drivePID(10);
-//   drivePID(-5);
-//   drivePID(5);
 
+//   //drivePidParams setting = {};
+//   //setting.maxSpeed = 30.0;
+//   //drivePID(4);
+//   drivePidParams setting = {};
+//   matchloader.set(false);
+//   Arm1.spin(forward,100,percent);
+//   drivePID(19);
+//   setting.maxSpeed = 30.0;
+//   drivePID(5, setting);
+//   turnPID(-90,0.26,0,0);
+//   drivePID(22);
+//   turnPID(-60,0.26,0,0);
+//   drivePID(-10);
+//   Arm2.spin(forward,100,percent);
+//   wait(3, sec);
+//   // Arm2.stop(hold);
+//   // drivePID(12);
+//   // matchloader.set(true);
+//   // setting.maxSpeed = 70.0;
+//   // drivePID(25);
+//   // drivePID(25.6);
+//   // drivePID(-0.5);
+//   // drivePID(1);
+//   // drivePID(-1);
+//   // drivePID(1);
+//   // drivePID(-0.8);
+//   // drivePID(0.8);
+//   // drivePID(-0.9);
+//   // drivePID(0.9);
+//   // drivePID(-1);
+//   // drivePID(1);
+//   // Arm1.spin(forward,100,percent);
+//   // Arm2.spin(forward,100,percent);
+//   // turnPID(-1,0.26,0,0);
+//   // drivePID(-10);
+//   drivePID(12);
+//   turnPID(125 ,0.26,0,0);
+//   drivePID(-60);
+//   drivePID(4);
+//   drivePID(-15);
+//   drivePID(3);
+//   drivePID(-20);
+//   drivePID(5);
+//   drivePID(-10);
 // }
+// void SkillsParking(){
+  drivePidParams setting = {};
+  setting.maxSpeed = 30.0;
+  drivePID(-10);
+  drivePID(5);
+  drivePID(-6);
+  drivePID(4);
+  drivePID(-5);
+  drivePID(-10);
+  drivePID(-5);
+  drivePID(10);
+}
                                                                                     
 // void HighGoalRAuton(){
-//     drivePidParams setting = {};
+//      drivePidParams setting = {};
 //     matchloader.set(false);
 //     Arm1.spin(forward,100,percent);
 //     drivePID(19);
 //     setting.maxSpeed = 30.0;
 //     drivePID(5, setting);
 //     turnPID(-90,0.26,0,0);
-//     drivePID(22.5);
+//    drivePID(23);
 //     turnPID(-60,0.26,0,0);
 //     drivePID(-9);
-//     Arm2.spin(forward,100,percent);
-//     wait(3, sec);
-//     Arm2.stop(hold);
-    // matchloader.set(true);
-    // drivePID(2);
+//    Arm2.spin(forward,100,percent);
+
+//     // wait(3, sec);
+//     //  Arm2.stop(hold);
+//     //  matchloader.set(true);
+//     //  drivePID(2);
 // }
    
    
-//void HighGoalLAuton(){
-//     drivePidParams setting = {};
+// void HighGoalLAuton(){
+    // drivePidParams setting = {};
 //     Arm1.spin(forward,100,percent);
 //     drivePID(19);
 //     setting.maxSpeed = 30.0;
