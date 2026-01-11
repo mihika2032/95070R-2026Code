@@ -12,7 +12,7 @@ void SkillsAuton(){
 //void SkillsScore&Park(){
   drivePidParams setting = {};
   Arm1.spin(forward,100,percent);
-  drivePID(20);
+  drivePID(19);
   setting.maxSpeed = 30.0;
   drivePID(5, setting);
   turnPID(-90,0.26,0,0);
