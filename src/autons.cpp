@@ -64,7 +64,7 @@ void SkillsAuton(){
   drivePID(4);
   drivePID(-5);
   drivePID(-10);
-  drivePID(-6);
+  drivePID(-5);
   drivePID(10);
 }
                                                                                     
