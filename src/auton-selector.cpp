@@ -5,14 +5,14 @@
 
 int selectedAuton = 0;
 
-const char* autonNames[] = { "SkillsAuton", "HighGoalRAuton", "HighGoalLAuton"};
-const int autonCount = 2;
+const char* autonNames[] = { "SkillsAuton", "HighGoalRAuton", "HighGoalLAuton", "SkillsParking"};
+const int autonCount = 4;
 
 using namespace vex;
 
 int getSelectedAuton() {
   return selectedAuton;
-  //make sure to press right aouton//
+  //make sure to press right auton//
 }
 
 void displayAutonSelector() {
@@ -20,9 +20,16 @@ void displayAutonSelector() {
   
     if (Controller.ButtonLeft.pressing()) {
       selectedAuton = (selectedAuton - 1 + autonCount) % autonCount;
+      while(Controller.ButtonLeft.pressing()) {
+        task::sleep(10);
+      }
     }
+
     if (Controller.ButtonRight.pressing()) {
       selectedAuton = (selectedAuton + 1) % autonCount;
+      while(Controller.ButtonRight.pressing()) {
+        task::sleep(10);
+      }
     }
 
     // if (Controller.ButtonX.pressing()) {

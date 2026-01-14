@@ -38,8 +38,8 @@ vex::motor_group RightDrive(RF, RM, RB);
 // Drivetrain: wheel travel = 320mm, track width = 280mm, wheelbase = 300mm (adjust as needed)
 vex::drivetrain Drivetrain(LeftDrive, RightDrive, 320, 280, 300);
 
-vex::motor Arm1(vex::PORT4, vex::gearSetting::ratio18_1,  true); //Arm motor
-vex::motor Arm2(vex::PORT5, vex::gearSetting::ratio18_1, true); //Arm motor
+vex::motor Arm1(vex::PORT4, vex::gearSetting::ratio18_1,  false); //Arm motor
+vex::motor Arm2(vex::PORT5, vex::gearSetting::ratio18_1, false); //Arm motor
 
 vex::digital_out matchloader(Brain.ThreeWirePort.B);
 vex::digital_out descorer(Brain.ThreeWirePort.A);

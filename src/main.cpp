@@ -61,12 +61,15 @@ void autonomous(void) {
     case 0:
       SkillsAuton();
       break;
-    // case 1:
-    //   HighGoalRAuton();
-    //   break;
-    // case 2:
-    //   HighGoalLAuton();
-    //   break;
+    case 1:
+      HighGoalRAuton();
+      break;
+    case 2:
+      HighGoalLAuton();
+      break;
+    case 3:
+      SkillsParking();
+      break;
     default:
       Brain.Screen.print("No valid auton selected");
       break;
@@ -245,7 +248,7 @@ if (Controller.ButtonDown.pressing() && !Prevpressed){
     wait(100, msec);
   }
 }
-
+//nom nom nom
 
 
 
