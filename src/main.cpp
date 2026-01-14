@@ -60,6 +60,7 @@ void autonomous(void) {
   switch (getSelectedAuton()) {
     case 0:
       SkillsAuton();
+      SkillsAuton();
       break;
     case 1:
       HighGoalRAuton();
@@ -71,6 +72,7 @@ void autonomous(void) {
       SkillsParking();
       break;
     default:
+      Brain.Screen.print("No valid auton selected");
       Brain.Screen.print("No valid auton selected");
       break;
   }
@@ -101,6 +103,11 @@ void usercontrol(void) {
 
   bool Prevpressed = false;
   bool matchloaderExtended = false;
+  bool prevPressed = false;
+  bool descorerExtended = false;
+
+  bool Prevpressed = false;
+  bool matchloaderExtended = false;
 
   while (true) {
      //========== DRIVE CONTROL ========== //
@@ -109,7 +116,72 @@ void usercontrol(void) {
      
 
     double leftPower = fwd + turn;
+     //========== DRIVE CONTROL ========== //
+    double fwd = Controller.Axis3.position();
+    double turn = Controller.Axis4.position() * 0.5;
+     
+
+    double leftPower = fwd + turn;
     double rightPower = fwd - turn;
+  
+    spinLeftDT(leftPower*0.7);
+    spinRightDT(rightPower*0.7);
+   //========== ARM CONTROL ========== //
+   if (Controller.ButtonR1.pressing()) {
+     Arm1.spin(forward, 100, percent);
+     Arm2.spin(forward, 100, percent);
+     } 
+     else if (Controller.ButtonR2.pressing()) {
+      Arm1.spin(reverse, 100, percent);
+      Arm2.spin(reverse, 100, percent);
+    } 
+    else if (Controller.ButtonL2.pressing()) {
+       Arm1.stop(hold);
+       Arm2.spin(forward, 100, percent);
+    }
+    else if (Controller.ButtonL1.pressing()) {
+       Arm2.stop(hold);
+       Arm1.spin(forward, 100, percent);
+    }
+    else {
+       Arm1.stop(brake);
+       Arm2.stop(brake);
+     }
+
+    if (Controller.ButtonUp.pressing() && !prevPressed){
+      descorerExtended = !descorerExtended;
+      prevPressed = true;
+      descorer.set(descorerExtended);
+    }
+    
+    if (!Controller.ButtonUp.pressing() && prevPressed){
+      prevPressed = false;
+    }
+if (Controller.ButtonDown.pressing() && !Prevpressed){
+      matchloaderExtended = !matchloaderExtended;
+      Prevpressed = true;
+      matchloader.set(matchloaderExtended);
+    }
+    
+    if (!Controller.ButtonDown.pressing() && Prevpressed){
+      Prevpressed = false;
+    }
+    //hw: different variable names to avoid confusion and make logic work
+
+    // if (Controller.ButtonA.pressing() && !prevPressed){
+    //   pistonExtended = !pistonExtended;
+    //   prevPressed = true;
+    //   mlm.set(pistonExtended);
+    // }
+
+    // if (!Controller.ButtonA.pressing() && prevPressed){
+    //   prevPressed = false;
+    // }
+
+    wait(20, msec);
+  }
+}
+
   
     spinLeftDT(leftPower*0.7);
     spinRightDT(rightPower*0.7);
@@ -183,6 +255,7 @@ if (Controller.ButtonDown.pressing() && !Prevpressed){
     //}
 
     /*// ========== INTAKE ========== //
+    /*// ========== INTAKE ========== //
     //out put for the intake//
     if (Controller.ButtonL1.pressing()) {
     bottomIntakeMotor.spin(forward, 100, percent);
@@ -202,11 +275,13 @@ if (Controller.ButtonDown.pressing() && !Prevpressed){
         topIntakeMotor.stop();
       }
     }*/
+    }*/
 
   
   
    
     
+    /*// ========== COLOR SENSOR ========== //
     /*// ========== COLOR SENSOR ========== //
     color detectedColor = OpticalSensor.color();
     if (detectedColor == color::blue) {
@@ -230,6 +305,7 @@ if (Controller.ButtonDown.pressing() && !Prevpressed){
 //void driver controll(){
 //doble forwards = Controller1.Axis2.position();
 //doble turning = Controller1.Axis4}
+*/
 */
   
 

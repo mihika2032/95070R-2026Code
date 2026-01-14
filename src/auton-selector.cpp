@@ -39,6 +39,13 @@ void displayAutonSelector() {
     //     break;
     //   }
     // }
+    // if (Controller.ButtonX.pressing()) {
+    //   vex::task::sleep(600);
+    //   if (Controller.ButtonX.pressing()) {
+    //     Controller.rumble("..");
+    //     break;
+    //   }
+    // }
 
     Controller.Screen.clearScreen();
     Controller.Screen.setCursor(1, 1);

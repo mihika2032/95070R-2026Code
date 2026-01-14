@@ -11,6 +11,18 @@ If it seems like some of your motors are running against eachother in the drivet
 */
 
 // src/robot-config.cpp
+//#include "robot-config.h"
+
+//Configuration!
+
+/*Reminders: 
+Make sure that all your ports are different and correct! 
+Make sure all of your motor + piston names are different and not confusing.
+If it seems like some of your motors are running against eachother in the drivetrain, try switching around the true/false
+
+*/
+
+// src/robot-config.cpp
 #include "robot-config.h"
 
 //Configuration!
@@ -66,13 +78,13 @@ vex::motor_group LeftDrive(LF, LM, LB);
 vex::motor_group RightDrive(RF, RM, RB);
 
 // Drivetrain: wheel travel = 320mm, track width = 280mm, wheelbase = 300mm (adjust as needed)
-vex::drivetrain Drivetrain(LeftDrive, RightDrive, 82.55, 280, 300);
+vex::drivetrain Drivetrain(LeftDrive, RightDrive, 320, 280, 300);
 
-//vex::motor Arm1(vex::PORT1, vex::gearSetting::ratio18_1, true); //Arm motor
-//vex::motor Arm2(vex::PORT2, vex::gearSetting::ratio18_1, true); //Arm motor
+vex::motor Arm1(vex::PORT4, vex::gearSetting::ratio18_1,  false); //Arm motor
+vex::motor Arm2(vex::PORT5, vex::gearSetting::ratio18_1, false); //Arm motor
 
-vex::digital_out DoubleActingPiston(Brain.ThreeWirePort.A);
-vex::digital_out SingleActingPiston(Brain.ThreeWirePort.B);
+vex::digital_out matchloader(Brain.ThreeWirePort.B);
+vex::digital_out descorer(Brain.ThreeWirePort.A);
 
 vex::motor topIntakeMotor(vex::PORT14, vex::gearSetting::ratio6_1, false); //Right Front Motor
 vex::motor middleIntakeMotor(vex::PORT13, vex::gearSetting::ratio6_1, true); //Right Front Motor
@@ -84,8 +96,6 @@ vex::inertial InertialSensor(vex::PORT1);
 
 void vexcodeInit() {
   InertialSensor.calibrate();
-  DoubleActingPiston.set(false); // retracted
-  SingleActingPiston.set(false); // off
   while (InertialSensor.isCalibrating()) {
     vex::task::sleep(100);
   }
