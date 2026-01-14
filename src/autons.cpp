@@ -47,7 +47,7 @@ void SkillsAuton(){
 }
 void SkillsParking(){
   drivePidParams setting = {};
-  setting.maxspeed = 40.0;
+  setting.maxSpeed = 40.0;
   drivePID(10);
   drivePID(-10);
   drivePID(10);
