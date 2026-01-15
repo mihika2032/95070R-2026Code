@@ -100,20 +100,40 @@ void usercontrol(void) {
   bool prevPressed = false;
   bool descorerExtended = false;
   bool matchloaderExtended = false;
-
-
-
-  while (true) {
-     //========== DRIVE CONTROL ========== //
+ while (1){
     double fwd = Controller.Axis3.position();
-    double turn = Controller.Axis4.position() * 0.5;
+    double turn = Controller.Axis1.position();
+
+    double left = fwd + turn;
+    double right = fwd - turn;
+    if(fabs(right) < 5 && fabs(left) <5){
+      RB.stop(coast);
+      RF.stop(coast);
+      RM.stop(coast);
+      LB.stop(coast);
+      LF.stop(coast);
+      LM.stop(coast);
+    }
+    else{
+      RF.spin(forward, right, percent);
+      RB.spin(forward, right, percent);
+      RM.spin(forward, right, percent);
+      LF.spin(forward, left, percent);
+      LB.spin(forward, left, percent);
+      LM.spin(forward, left, percent);
+    }
+    wait(20, msec);
+    
+    //  //========== DRIVE CONTROL ========== //
+    // double fwd = Controller.Axis3.position();
+    // double turn = Controller.Axis4.position() * 0.5;
      
 
-    double leftPower = fwd + turn;
-    double rightPower = fwd - turn;
+    // double leftPower = fwd + turn;
+    // double rightPower = fwd - turn;
   
-    spinLeftDT(leftPower*0.7);
-    spinRightDT(rightPower*0.7);
+    // spinLeftDT(leftPower*0.7);
+    // spinRightDT(rightPower*0.7);
    //========== ARM CONTROL ========== //
    if (Controller.ButtonR1.pressing()) {
      Arm1.spin(forward, 100, percent);
@@ -140,20 +160,24 @@ void usercontrol(void) {
       descorerExtended = !descorerExtended;
       prevPressed = true;
       descorer.set(descorerExtended);
+      wait(0.3, sec);
     }
     
     if (!Controller.ButtonUp.pressing() && prevPressed){
       prevPressed = false;
+      wait(0.3, sec);
     }
 
     if (Controller.ButtonDown.pressing() && !prevPressed){
       matchloaderExtended = !matchloaderExtended;
       prevPressed = true;
       matchloader.set(matchloaderExtended);
+      wait(0.3, sec);
     }
     
     if (!Controller.ButtonDown.pressing() && prevPressed){
       prevPressed = false;
+      wait(0.3, sec);
     }
     //hw: different variable names to avoid confusion and make logic work
 
@@ -167,7 +191,7 @@ void usercontrol(void) {
     //   prevPressed = false;
     // }
 
-    wait(20, msec);
+    wait(30, msec);
   }
 }
 
