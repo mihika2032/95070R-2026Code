@@ -46,13 +46,14 @@ void SkillsAuton(){
 //   drivePID(-50);
 }
 void SkillsParking(){
-  drivePidParams setting = {};
+  Arm1.spin(forward,100,percent);
+  /*drivePidParams setting = {};
   setting.maxSpeed = 40.0;
   drivePID(10);
   drivePID(-10);
   drivePID(10);
   drivePID(-5);
-  drivePID(5);
+  drivePID(5);*/
 }
                                                                                     
 void HighGoalRAuton(){
@@ -67,10 +68,11 @@ void HighGoalRAuton(){
     turnPID(-60,0.26,0,0);
     drivePID(-9);
     Arm2.spin(forward,100,percent);
-    wait(3, sec);
-    Arm2.stop(hold);
+  
+    //wait(3, sec);
+    //Arm2.stop(hold);
     matchloader.set(true);
-    drivePID(2);
+    
 }
    
    
@@ -85,6 +87,19 @@ void HighGoalLAuton(){
     turnPID(67,0.26,0,0);
     drivePID(-8);
     Arm2.spin(forward, 100, percent);
+    wait(2.5, sec);
+    matchloader.set(true);
+    Arm2.stop(hold);
+    drivePID(23);
+    drivePID(-2);
+    Arm1.spin(forward,100,percent);
+    drivePID(4);
+    wait(2.5,sec);
+    Arm1.stop(hold);
+    drivePID(-25);
+
+
+    
 }
    
     /*void VIOLA IS BETTER IYKYK(){
