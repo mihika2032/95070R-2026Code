@@ -100,9 +100,11 @@ void usercontrol(void) {
   bool prevPressed = false;
   bool descorerExtended = false;
   bool matchloaderExtended = false;
- while (1){
-    double fwd = Controller.Axis3.position();
+ 
+  while (1){
+    double fwd = Controller.Axis3.position()+ Controller.Axis2.position();
     double turn = Controller.Axis4.position();
+
 
     double left = fwd + turn;
     double right = fwd - turn;
