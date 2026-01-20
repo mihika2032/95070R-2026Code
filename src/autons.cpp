@@ -77,6 +77,7 @@ void HighGoalRAuton(){
    
    
 void HighGoalLAuton(){
+   Controller.Screen.print("Hello hooman MWHHAHAHA!");
     drivePidParams setting = {};
     Arm1.spin(forward,100,percent);
     drivePID(19);
