@@ -11,7 +11,8 @@ using namespace vex;
 void SkillsAuton(){
   drivePidParams setting = {};
   setting.maxSpeed = 30.0;
-  drivePID(10);
+  matchloader.set(true);
+
 
 //   drivePidParams setting = {};
 //   Arm1.spin(forward,100,percent);
@@ -88,7 +89,7 @@ void HighGoalLAuton(){
     turnPID(67,0.26,0,0);
     drivePID(-8);
     Arm2.spin(forward, 100, percent);
-    wait(2.5, sec);
+   /* wait(2.5, sec);
     matchloader.set(true);
     Arm2.stop(hold);
     drivePID(23);
@@ -97,7 +98,7 @@ void HighGoalLAuton(){
     drivePID(4);
     wait(2.5,sec);
     Arm1.stop(hold);
-    drivePID(-25);
+    drivePID(-25);*/
 
 
     
