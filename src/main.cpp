@@ -170,14 +170,14 @@ void usercontrol(void) {
       wait(0.3, sec);
     }
 
-    if (Controller.ButtonY.pressing() && !prevPressed){
+    if (Controller.ButtonB.pressing() && !prevPressed){
       matchloaderExtended = !matchloaderExtended;
       prevPressed = true;
       matchloader.set(matchloaderExtended);
       wait(0.3, sec);
     }
     
-    if (!Controller.ButtonY.pressing() && prevPressed){
+    if (!Controller.ButtonB.pressing() && prevPressed){
       prevPressed = false;
       wait(0.3, sec);
     }
