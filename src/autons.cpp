@@ -66,8 +66,8 @@ void HighGoalRAuton(){
     drivePID(5, setting);
     turnPID(-90,0.26,0,0);
     drivePID(22.5);
-    turnPID(-60,0.26,0,0);
-    drivePID(-9);
+    turnPID(-67,0.26,0,0);
+    drivePID(-8);
     Arm2.spin(forward,100,percent);
   
     //wait(3, sec);
@@ -88,6 +88,8 @@ void HighGoalLAuton(){
     turnPID(67,0.26,0,0);
     drivePID(-8);
     Arm2.spin(forward, 100, percent);
+    matchloader.set(true);
+    descorer.set(true);
    /* wait(2.5, sec);
     matchloader.set(true);
     Arm2.stop(hold);
