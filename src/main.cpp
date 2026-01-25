@@ -102,7 +102,7 @@ void usercontrol(void) {
   bool matchloaderExtended = false;
  
   while (1){
-    double fwd = Controller.Axis3.position()+ Controller.Axis2.position();
+    double fwd = Controller.Axis3.position();
     double turn = Controller.Axis4.position();
 
 
@@ -158,26 +158,26 @@ void usercontrol(void) {
        Arm2.stop(brake);
      }
 
-    if (Controller.ButtonX.pressing() && !prevPressed){
+    if (Controller.ButtonUp.pressing() && !prevPressed){
       descorerExtended = !descorerExtended;
       prevPressed = true;
       descorer.set(descorerExtended);
       wait(0.3, sec);
     }
     
-    if (!Controller.ButtonX.pressing() && prevPressed){
+    if (!Controller.ButtonUp.pressing() && prevPressed){
       prevPressed = false;
       wait(0.3, sec);
     }
 
-    if (Controller.ButtonB.pressing() && !prevPressed){
+    if (Controller.ButtonDown.pressing() && !prevPressed){
       matchloaderExtended = !matchloaderExtended;
       prevPressed = true;
       matchloader.set(matchloaderExtended);
       wait(0.3, sec);
     }
     
-    if (!Controller.ButtonB.pressing() && prevPressed){
+    if (!Controller.ButtonDown.pressing() && prevPressed){
       prevPressed = false;
       wait(0.3, sec);
     }

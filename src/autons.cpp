@@ -11,7 +11,18 @@ using namespace vex;
 void SkillsAuton(){
   drivePidParams setting = {};
   setting.maxSpeed = 30.0;
-  matchloader.set(true);
+  drivePID(-10);
+  drivePID(5);
+  drivePID(-15);
+  drivePID(10);
+  drivePID(-14);
+  drivePID(5);
+  drivePID(-17);
+  drivePID(3);
+  drivePID(-7);
+  drivePID(3);
+  
+ 
 
 
 //   drivePidParams setting = {};
