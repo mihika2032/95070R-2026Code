@@ -5,8 +5,8 @@
 
 int selectedAuton = 0;
 
-const char* autonNames[] = { "SkillsAuton", "HighGoalRAuton", "HighGoalLAuton", "SkillsParking"};
-const int autonCount = 4;
+const char* autonNames[] = { "AWP","SkillsAuton", "HighGoalRAuton", "HighGoalLAuton", "SkillsParking"};
+const int autonCount = 5;
 
 using namespace vex;
 

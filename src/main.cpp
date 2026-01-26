@@ -59,17 +59,21 @@ void autonomous(void) {
   
   switch (getSelectedAuton()) {
     case 0:
-      SkillsAuton();
+      AWP();
       break;
     case 1:
-      HighGoalRAuton();
+      SkillsAuton();
       break;
     case 2:
-      HighGoalLAuton();
+      HighGoalRAuton();
       break;
     case 3:
+      HighGoalLAuton();
+      break;
+    case 4:
       SkillsParking();
       break;
+    
 
     default:
       Brain.Screen.print("No valid auton selected");
