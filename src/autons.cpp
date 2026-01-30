@@ -4,33 +4,49 @@
 #include "arm.h"
 #include "functions.h"
 #include "autons.h"
-
+ //    0
+ //270   90
+ //   180
 using namespace vex;
 
 void AWP(){
+// InertialSensor.setRotation(270, degrees);
 drivePidParams setting = {};
-setting.maxSpeed = 30.0;
+setting.maxSpeed = 50.0;
+Arm1.spin(forward,80,percent);
+drivePID(37);
 matchloader.set(true);
-Arm1.spin(forward,100,percent);
-drivePID(25);
-turnPID(89,0.26,0,0);
-drivePID(7);
-wait(1,sec);
-//drivePID(4,setting);
-drivePID(-23);
+turnPID(91,0.26,0,0);
+setting.maxSpeed = 5.0;
+drivePID(21);
+drivePID(-0.5);
+drivePID(1);
+// drivePID(-0.5);
+// drivePID(1);
+wait(1, sec);
+drivePID(4);
+setting.maxSpeed = 50.0;
+drivePID(-21);
+turnPID(-2,0.26,0,0);
+drivePID(-3);
 Arm2.spin(forward,100,percent);
+drivePID(1);
 wait(2,sec);
 Arm2.stop();
 Arm1.stop();
 matchloader.set(false);
 drivePID(10);
-turnPID(129,0.26,0,0);
+turnPID(250,0.26,0,0);
 Arm1.spin(forward,100,percent);
 drivePID(20);
 drivePID(2);
 turnPID(180,0.26,0,0);
 drivePID(-13);
 Arm2.spin(forward,200,percent);
+wait(2,sec);
+drivePID(13);
+turnPID(-90,0.26,0,0);
+drivePID(-100);
 }
 
 void SkillsAuton(){

@@ -112,7 +112,7 @@ void usercontrol(void) {
 
     double left = fwd + turn;
     double right = fwd - turn;
-    if(fabs(right) < 5 && fabs(left) <5){
+    if(fabs(right) < 3 && fabs(left) <3){
       RB.stop(coast);
       RF.stop(coast);
       RM.stop(coast);
