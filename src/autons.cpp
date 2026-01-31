@@ -41,7 +41,7 @@ Arm1.spin(forward,100,percent);
 drivePID(20);
 drivePID(2);
 turnPID(180,0.26,0,0);
-drivePID(-13);
+drivePID(-15);
 Arm2.spin(forward,200,percent);
 wait(2,sec);
 drivePID(13);
