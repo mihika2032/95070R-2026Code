@@ -73,7 +73,9 @@ void autonomous(void) {
     case 4:
       SkillsParking();
       break;
-    
+    case 5:
+      Auton();
+      break;
 
     default:
       Brain.Screen.print("No valid auton selected");

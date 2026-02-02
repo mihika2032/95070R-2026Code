@@ -8,6 +8,7 @@ void  SkillsAuton();
 void  HighGoalRAuton();
 void  HighGoalLAuton();
 void  SkillsParking();
+void Auton();
 
 
 

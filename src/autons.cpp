@@ -243,5 +243,9 @@ void HighGoalLAuton(){
 
 // }
 
+void Auton(){
+  
+}
+
 
 
