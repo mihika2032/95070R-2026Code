@@ -245,6 +245,21 @@ void HighGoalLAuton(){
 
 void Auton(){
 //nom nom  
+drivePidParams setting = {};
+Arm1.spin(forward,100,percent);
+drivePID(19);
+setting.maxSpeed = 30.0;
+drivePID(5, setting);
+turnPID(90,0.26,0,0);
+drivePID(22.5);
+turnPID(67,0.26,0,0);
+drivePID(-8);
+Arm2.spin(forward, 100, percent);
+    wait(2, sec);
+    descorer.set(true);
+    turnPID(180,0.26,0,0);
+    descorer.set(false);
+    drivePID(7);
 }
 
 
