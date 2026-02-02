@@ -47,6 +47,7 @@ wait(2,sec);
 drivePID(13);
 turnPID(-90,0.26,0,0);
 drivePID(-100);
+
 }
 
 void SkillsAuton(){
@@ -60,7 +61,7 @@ void SkillsAuton(){
   drivePID(5);
   drivePID(-17);
   drivePID(3);
-  drivePID(-7);
+  drivePID(-5);
   drivePID(3);
   
  
