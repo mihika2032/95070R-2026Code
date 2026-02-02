@@ -151,16 +151,16 @@ void SkillsAuton(){
 //   turnPID(120 ,0.26,0,0);
 //   drivePID(-50);
 }
-void SkillsParking(){
-  Arm1.spin(forward,100,percent);
-  /*drivePidParams setting = {};
-  setting.maxSpeed = 40.0;
-  drivePID(10);
-  drivePID(-10);
-  drivePID(10);
-  drivePID(-5);
-  drivePID(5);*/
-}
+// void SkillsParking(){
+//   Arm1.spin(forward,100,percent);
+//   /*drivePidParams setting = {};
+//   setting.maxSpeed = 40.0;
+//   drivePID(10);
+//   drivePID(-10);
+//   drivePID(10);
+//   drivePID(-5);
+//   drivePID(5);*/
+// }
                                                                                     
 void HighGoalRAuton(){
     drivePidParams setting = {};

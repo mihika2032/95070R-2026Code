@@ -7,8 +7,8 @@ void AWP();
 void  SkillsAuton();
 void  HighGoalRAuton();
 void  HighGoalLAuton();
-void  SkillsParking();
-void Auton();
+// void  SkillsParking();
+void  Auton();
 
 
 

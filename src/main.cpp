@@ -71,9 +71,9 @@ void autonomous(void) {
       HighGoalLAuton();
       break;
     case 4:
-      SkillsParking();
-      break;
-    case 5:
+      // SkillsParking();
+      // break;
+    // case 5:
       Auton();
       break;
 
