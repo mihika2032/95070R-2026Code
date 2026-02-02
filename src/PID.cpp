@@ -64,7 +64,7 @@ void turnPID(double targetAngle, double kP, double kI, double kD) ;
 
   double dir = targetAngle/fabs(targetAngle);
   // Reset inertial and motor encoders
-
+  InertialSensor.setRotation(0, degrees);
   // PID state
   double err = targetAngle;
   double integ = 0;

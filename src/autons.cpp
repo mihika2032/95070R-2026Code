@@ -10,45 +10,97 @@
 using namespace vex;
 
 void AWP(){
-// InertialSensor.setRotation(270, degrees);
 drivePidParams setting = {};
-setting.maxSpeed = 50.0;
-Arm1.spin(forward,80,percent);
-drivePID(37);
+descorer.set(true);
+Arm1.spin(forward,100,percent);
+drivePID(40);
 matchloader.set(true);
 turnPID(91,0.26,0,0);
-setting.maxSpeed = 5.0;
-drivePID(21);
+setting.maxSpeed = 35.0;
+drivePID(11, setting);
+setting.maxSpeed = 30.0;
 drivePID(-0.5);
 drivePID(1);
+drivePID(-0.5);
+drivePID(1);
+//go to other side
+drivePID(-5);
+turnPID(88,0.26, 0, 0);
+drivePID(-9, setting);
+turnPID(-90,0.26, 0, 0);
+Arm1.stop();
+setting.maxSpeed = 167.0;
+drivePID(-75, setting);
+// setting.maxSpeed = 5.0;
+// drivePID(-5);
+// turnPID(45,0.26, 0, 0);
+// drivePID(-15);
+// turnPID(-42, 0.26, 0, 0);
+// setting.maxSpeed = 50.0;
+// drivePID(-70);
+//deposit blocks
+setting.maxSpeed = 30.0;
+turnPID(90, 0.26, 0, 0);
+drivePID(10, setting);
+turnPID(90,0.26,0,0);
+drivePID(-14);
+Arm2.spin(forward, 100, percent);
+Arm1.spin(forward,100,percent);
+//next matchload
+wait(3, sec);
+Arm2.stop();
+setting.maxSpeed = 35.0;
+drivePID(24, setting);
+drivePID(-0.5);
+drivePID(1);
+drivePID(-0.5);
+drivePID(1);
+drivePID(-24);
+Arm2.spin(forward, 100, percent);
+wait(3,sec);
+drivePID(12, setting);
+turnPID(-90, 0.26, 0, 0);
+
+
+// // InertialSensor.setRotation(270, degrees);
+// drivePidParams setting = {};
+// setting.maxSpeed = 10.0;
+// Arm1.spin(forward,80,percent);
+// drivePID(30);
+// matchloader.set(true);
+// turnPID(91,0.26,0,0);
+// setting.maxSpeed = 2.0;
+// drivePID(15);
 // drivePID(-0.5);
 // drivePID(1);
-wait(1, sec);
-drivePID(4);
-setting.maxSpeed = 50.0;
-drivePID(-21);
-turnPID(-2,0.26,0,0);
-drivePID(-3);
-Arm2.spin(forward,100,percent);
-drivePID(1);
-wait(2,sec);
-Arm2.stop();
-Arm1.stop();
-matchloader.set(false);
-drivePID(10);
-turnPID(250,0.26,0,0);
-Arm1.spin(forward,100,percent);
-drivePID(20);
-drivePID(2);
-turnPID(180,0.26,0,0);
-drivePID(-15);
-Arm2.spin(forward,200,percent);
-wait(2,sec);
-drivePID(13);
-turnPID(-90,0.26,0,0);
-drivePID(-100);
-
+// // drivePID(-0.5);
+// // drivePID(1);
+// wait(1, sec);
+// // drivePID(4);
+// setting.maxSpeed = 10.0;
+// drivePID(-1);
+// turnPID(-2,0.26,0,0);
+// drivePID(-20);
+// Arm2.spin(forward,100,percent);
+// drivePID(1);
+// wait(2,sec);
+// Arm2.stop();
+// Arm1.stop();
+// matchloader.set(false);
+// drivePID(10);
+// turnPID(145,0.26,0,0);
+// Arm1.spin(forward,100,percent);
+// drivePID(20);
+// drivePID(2);
+// turnPID(180,0.26,0,0);
+// drivePID(-13);
+// Arm2.spin(forward,200,percent);
+// wait(2,sec);
+// drivePID(13);
+// turnPID(-90,0.26,0,0);
+// drivePID(-100);
 }
+
 
 void SkillsAuton(){
   drivePidParams setting = {};

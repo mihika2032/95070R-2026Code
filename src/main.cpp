@@ -112,7 +112,7 @@ void usercontrol(void) {
 
     double left = fwd + turn;
     double right = fwd - turn;
-    if(fabs(right) < 3 && fabs(left) <3){
+    if(fabs(right) < 5 && fabs(left) > 5){
       RB.stop(coast);
       RF.stop(coast);
       RM.stop(coast);
@@ -162,26 +162,26 @@ void usercontrol(void) {
        Arm2.stop(brake);
      }
 
-    if (Controller.ButtonUp.pressing() && !prevPressed){
+    if (Controller.ButtonX.pressing() && !prevPressed){
       descorerExtended = !descorerExtended;
       prevPressed = true;
       descorer.set(descorerExtended);
       wait(0.3, sec);
     }
     
-    if (!Controller.ButtonUp.pressing() && prevPressed){
+    if (!Controller.ButtonX.pressing() && prevPressed){
       prevPressed = false;
       wait(0.3, sec);
     }
 
-    if (Controller.ButtonDown.pressing() && !prevPressed){
+    if (Controller.ButtonB.pressing() && !prevPressed){
       matchloaderExtended = !matchloaderExtended;
       prevPressed = true;
       matchloader.set(matchloaderExtended);
       wait(0.3, sec);
     }
     
-    if (!Controller.ButtonDown.pressing() && prevPressed){
+    if (!Controller.ButtonB.pressing() && prevPressed){
       prevPressed = false;
       wait(0.3, sec);
     }
