@@ -17,7 +17,7 @@ drivePID(40);
 matchloader.set(true);
 turnPID(91,0.26,0,0);
 setting.maxSpeed = 35.0;
-drivePID(11, setting);
+drivePID(22, setting);
 setting.maxSpeed = 30.0;
 drivePID(-0.5);
 drivePID(1);
@@ -42,12 +42,12 @@ drivePID(-75, setting);
 // drivePID(-70);
 
 //deposit blocks
-setting.maxSpeed = 30.0;
+setting.maxSpeed = 50.0;
 turnPID(88, 0.26, 0, 0);
 drivePID(10, setting);
 turnPID(90,0.26,0,0);
 spinDT(-100);
-wait(2, sec);
+wait(1, sec);
 stopDT();
 Arm2.spin(forward, 100, percent);
 Arm1.spin(forward,100,percent);
@@ -57,7 +57,7 @@ wait(3.5, sec);
 Arm2.stop();
 setting.maxSpeed = 35.0;
 turnPID(-2, 0.26, 0, 0);
-drivePID(25, setting);
+drivePID(24, setting);
 drivePID(-0.5);
 drivePID(1);
 drivePID(-0.5);
@@ -81,6 +81,7 @@ drivePID(-0.5);
 drivePID(1);
 
 //go to other side
+setting.maxSpeed = 50.0;
 drivePID(-5);
 turnPID(88,0.26, 0, 0);
 Arm1.stop();
@@ -97,11 +98,13 @@ drivePID(-75, setting);
 // drivePID(-70);
 
 //deposit blocks
-setting.maxSpeed = 30.0;
+setting.maxSpeed = 50.0;
 turnPID(88, 0.26, 0, 0);
 drivePID(10, setting);
 turnPID(88,0.26,0,0);
-drivePID(-16);
+spinDT(-100);
+wait(1, sec);
+stopDT();
 Arm2.spin(forward, 100, percent);
 Arm1.spin(forward,100,percent);
 
@@ -120,47 +123,10 @@ Arm2.spin(forward, 100, percent);
 wait(2.5, sec);
 drivePID(12);
 turnPID(125, 0.26, 0, 0);
-drivePID(-100);
-
-
-
+matchloader.set(true);
+drivePID(-60);
+drivePID(2);
 // // InertialSensor.setRotation(270, degrees);
-// drivePidParams setting = {};
-// setting.maxSpeed = 10.0;
-// Arm1.spin(forward,80,percent);
-// drivePID(30);
-// matchloader.set(true);
-// turnPID(91,0.26,0,0);
-// setting.maxSpeed = 2.0;
-// drivePID(15);
-// drivePID(-0.5);
-// drivePID(1);
-// // drivePID(-0.5);
-// // drivePID(1);
-// wait(1, sec);
-// // drivePID(4);
-// setting.maxSpeed = 10.0;
-// drivePID(-1);
-// turnPID(-2,0.26,0,0);
-// drivePID(-20);
-// Arm2.spin(forward,100,percent);
-// drivePID(1);
-// wait(2,sec);
-// Arm2.stop();
-// Arm1.stop();
-// matchloader.set(false);
-// drivePID(10);
-// turnPID(145,0.26,0,0);
-// Arm1.spin(forward,100,percent);
-// drivePID(20);
-// drivePID(2);
-// turnPID(180,0.26,0,0);
-// drivePID(-13);
-// Arm2.spin(forward,200,percent);
-// wait(2,sec);
-// drivePID(13);
-// turnPID(-90,0.26,0,0);
-// drivePID(-100);
 }
 
 
