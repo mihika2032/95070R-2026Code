@@ -271,7 +271,7 @@ void HighGoalLAuton(){
 
 // }
 
-void Auton(){
+void LeftAuton(){
 //nom nom  
 drivePidParams setting = {};
 Arm1.spin(forward,100,percent);
@@ -294,5 +294,8 @@ descorer.set(false);
 drivePID(-20);
 }
 
+void RightAuton(){
+  //hi
+}
 
 

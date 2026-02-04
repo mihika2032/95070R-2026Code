@@ -74,7 +74,10 @@ void autonomous(void) {
       // SkillsParking();
       // break;
     // case 5:
-      Auton();
+      LeftAuton();
+      break;
+    case 5:
+      RightAuton();
       break;
 
     default:
