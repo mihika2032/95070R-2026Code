@@ -59,10 +59,10 @@ void autonomous(void) {
   
   switch (getSelectedAuton()) {
     case 0:
-      AWP();
+      Skills();
       break;
     case 1:
-      SkillsAuton();
+      SkillsParking();
       break;
     case 2:
       HighGoalRAuton();

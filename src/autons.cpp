@@ -9,7 +9,7 @@
  //   180
 using namespace vex;
 
-void AWP(){
+void Skills(){
 drivePidParams setting = {};
 descorer.set(true);
 Arm1.spin(forward,100,percent);
@@ -130,7 +130,7 @@ drivePID(2);
 }
 
 
-void SkillsAuton(){
+void SkillsParking(){
   drivePidParams setting = {};
   setting.maxSpeed = 30.0;
   drivePID(-10);
@@ -179,16 +179,7 @@ void SkillsAuton(){
 //   turnPID(120 ,0.26,0,0);
 //   drivePID(-50);
 }
-// void SkillsParking(){
-//   Arm1.spin(forward,100,percent);
-//   /*drivePidParams setting = {};
-//   setting.maxSpeed = 40.0;
-//   drivePID(10);
-//   drivePID(-10);
-//   drivePID(10);
-//   drivePID(-5);
-//   drivePID(5);*/
-// }
+
                                                                                     
 void HighGoalRAuton(){
     drivePidParams setting = {};

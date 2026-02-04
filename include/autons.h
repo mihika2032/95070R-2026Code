@@ -3,11 +3,10 @@
 
 
 //Autons//
-void AWP();
-void  SkillsAuton();
+void  Skills();
+void  SkillsParking();
 void  HighGoalRAuton();
 void  HighGoalLAuton();
-// void  SkillsParking();
 void  LeftAuton();
 void  RightAuton();
 
