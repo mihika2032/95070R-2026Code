@@ -294,17 +294,18 @@ drivePID(5, setting);
 turnPID(-90,0.26,0,0);
 drivePID(22.5);
 turnPID(-67,0.26,0,0);
-drivePID(-9);
+drivePID(-10);
 Arm2.spin(forward, 100, percent);
 wait(2, sec);
 descorer.set(true);
 drivePID(7);
 turnPID(-90,0.26,0,0);
-drivePID(-8.5, setting);
+drivePID(8.5, setting);
 setting.maxSpeed = 30.0;
-turnPID(95,0.26,0,0);
+turnPID(94,0.26,0,0);
 descorer.set(false);
-drivePID(-20);
+setting.maxSpeed = 95.0;
+drivePID(-20, setting);
 }
 
 
