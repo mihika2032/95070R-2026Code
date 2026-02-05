@@ -8,6 +8,7 @@ using namespace vex;
 
 void drivePID(double targetInches, drivePidParams param ,double kP, double kI, double kD) {
 // void drivePID(double targetInches, double kP, double kI, double kD); 
+//dis /*int timeout*/ goes next to double kD
 
   double targetDegrees = inchesToDegrees(targetInches);
 
@@ -20,9 +21,11 @@ void drivePID(double targetInches, drivePidParams param ,double kP, double kI, d
   double derivative = 0;
   double lastError = 0;
   double maxIntegral = 100;
-
+  //int startTime = vex::timer::system();
 
   while (fabs(error) > 4.0) { //Keep running until you’re within 1° of your target
+
+    //if(vex::timer::system() - startTime > timeout) break;
     double leftAvg = (LF.position(degrees) + LM.position(degrees) + LB.position(degrees)) / 3.0;
     double rightAvg = (RF.position(degrees) + RM.position(degrees) + RB.position(degrees)) / 3.0;
     double avgPos = (leftAvg + rightAvg) / 2.0;

@@ -17,7 +17,7 @@ drivePID(40);
 matchloader.set(true);
 turnPID(91,0.26,0,0);
 setting.maxSpeed = 35.0;
-drivePID(22, setting);
+drivePID(14, setting);
 setting.maxSpeed = 30.0;
 drivePID(-0.5);
 drivePID(1);
@@ -62,6 +62,7 @@ drivePID(-0.5);
 drivePID(1);
 drivePID(-0.5);
 drivePID(1);
+turnPID(2, 0.26, 0, 0);
 drivePID(-23);
 Arm2.spin(forward, 100, percent);
 wait(3,sec);
@@ -86,7 +87,7 @@ drivePID(-5);
 turnPID(88,0.26, 0, 0);
 Arm1.stop();
 drivePID(-10, setting);
-turnPID(-88,0.26, 0, 0);
+turnPID(-90,0.26, 0, 0);
 setting.maxSpeed = 167.0;
 drivePID(-75, setting);
 // setting.maxSpeed = 5.0;
@@ -111,20 +112,21 @@ Arm1.spin(forward,100,percent);
 //next matchload
 wait(3.5, sec);
 Arm2.stop();
-setting.maxSpeed = 35.0;
+setting.maxSpeed = 40.0;
 turnPID(-2, 0.26, 0, 0);
 drivePID(24, setting);
 drivePID(-0.5);
 drivePID(1);
 drivePID(-0.5);
 drivePID(1);
+turnPID(-2, 0.26, 0, 0);
 drivePID(-24);
 Arm2.spin(forward, 100, percent);
 wait(2.5, sec);
 drivePID(12);
 turnPID(125, 0.26, 0, 0);
-matchloader.set(true);
-drivePID(-60);
+matchloader.set(false);
+drivePID(-65);
 drivePID(2);
 // // InertialSensor.setRotation(270, degrees);
 }
@@ -310,3 +312,4 @@ drivePID(-20, setting);
 }
 
 
+//nom nom
