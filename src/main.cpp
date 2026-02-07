@@ -113,17 +113,18 @@ void usercontrol(void) {
   while (1){
     double fwd = Controller.Axis3.position();
     double turn = Controller.Axis4.position();
+    //double turn = Controller.Axis1.position(); (for tank drive)
 
 
-    double left = fwd + turn;
-    double right = fwd - turn;
+    double left = fwd + turn *0.7;
+    double right = fwd - turn *0.7;
     if(fabs(right) < 5 && fabs(left) > 5){
-      RB.stop(coast);
-      RF.stop(coast);
-      RM.stop(coast);
-      LB.stop(coast);
-      LF.stop(coast);
-      LM.stop(coast);
+      RB.stop(brake);
+      RF.stop(brake);
+      RM.stop(brake);
+      LB.stop(brake);
+      LF.stop(brake);
+      LM.stop(brake);
     }
     else{
       RF.spin(forward, right, percent);

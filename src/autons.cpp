@@ -15,119 +15,106 @@ descorer.set(true);
 Arm1.spin(forward,100,percent);
 drivePID(40);
 matchloader.set(true);
-turnPID(91,0.26,0,0);
-setting.maxSpeed = 35.0;
-drivePID(14, setting);
-setting.maxSpeed = 30.0;
-drivePID(-0.5);
-drivePID(1);
-drivePID(-0.5);
-drivePID(1);
-
-//go to other side
-setting.maxSpeed = 50.0;
-drivePID(-5, setting);
-turnPID(88,0.26, 0, 0);
-Arm1.stop();
-drivePID(-10, setting);
-turnPID(-88,0.26, 0, 0);
-setting.maxSpeed = 167.0;
-drivePID(-75, setting);
-// setting.maxSpeed = 5.0;
-// drivePID(-5);
-// turnPID(45,0.26, 0, 0);
-// drivePID(-15);
-// turnPID(-42, 0.26, 0, 0);
-// setting.maxSpeed = 50.0;
-// drivePID(-70);
-
-//deposit blocks
-setting.maxSpeed = 50.0;
-turnPID(88, 0.26, 0, 0);
-drivePID(10, setting);
 turnPID(90,0.26,0,0);
-spinDT(-100);
-wait(1, sec);
-stopDT();
-Arm2.spin(forward, 100, percent);
-Arm1.spin(forward,100,percent);
-
-//next matchload
-wait(3.5, sec);
-Arm2.stop();
 setting.maxSpeed = 35.0;
-turnPID(-2, 0.26, 0, 0);
-drivePID(24, setting);
-drivePID(-0.5);
-drivePID(1);
-drivePID(-0.5);
-drivePID(1);
-turnPID(2, 0.26, 0, 0);
-drivePID(-23);
-Arm2.spin(forward, 100, percent);
-wait(3,sec);
-drivePID(12, setting);
-turnPID(-88, 0.26, 0, 0);
-drivePID(78);
-
-//other side
-Arm2.stop();
-turnPID(91,0.26,0,0);
-setting.maxSpeed = 35.0;
-drivePID(15, setting);
+drivePID(10, setting);
 setting.maxSpeed = 30.0;
 drivePID(-0.5);
 drivePID(1);
 drivePID(-0.5);
-drivePID(1);
+// drivePID(1);
 
-//go to other side
-setting.maxSpeed = 50.0;
-drivePID(-5);
-turnPID(88,0.26, 0, 0);
+// //go to other side
+setting.maxSpeed = 60.0;
+drivePID(-10, setting);
+turnPID(88,0.30, 0, 0);
 Arm1.stop();
 drivePID(-10, setting);
-turnPID(-90,0.26, 0, 0);
+turnPID(-88,0.30, 0, 0);
 setting.maxSpeed = 167.0;
-drivePID(-75, setting);
-// setting.maxSpeed = 5.0;
-// drivePID(-5);
-// turnPID(45,0.26, 0, 0);
-// drivePID(-15);
-// turnPID(-42, 0.26, 0, 0);
-// setting.maxSpeed = 50.0;
-// drivePID(-70);
+drivePID(-70, setting);
 
-//deposit blocks
+// //deposit blocks
 setting.maxSpeed = 50.0;
-turnPID(88, 0.26, 0, 0);
-drivePID(10, setting);
-turnPID(88,0.26,0,0);
+turnPID(88, 0.30, 0, 0);
+drivePID(11, setting);
+turnPID(90,0.30,0,0);
 spinDT(-100);
 wait(1, sec);
 stopDT();
 Arm2.spin(forward, 100, percent);
 Arm1.spin(forward,100,percent);
 
-//next matchload
+// //next matchload
 wait(3.5, sec);
 Arm2.stop();
 setting.maxSpeed = 40.0;
 turnPID(-2, 0.26, 0, 0);
-drivePID(24, setting);
+drivePID(23, setting);
 drivePID(-0.5);
 drivePID(1);
-drivePID(-0.5);
-drivePID(1);
-turnPID(-2, 0.26, 0, 0);
-drivePID(-24);
-Arm2.spin(forward, 100, percent);
-wait(2.5, sec);
+// drivePID(-0.5);
+// drivePID(1);
+turnPID(2, 0.30, 0, 0);
+drivePID(-23);
+Arm2.spin(forward, 90, percent);
+wait(3,sec);
 drivePID(12);
-turnPID(125, 0.26, 0, 0);
-matchloader.set(false);
-drivePID(-65);
-drivePID(2);
+turnPID(-80, 0.30, 0, 0);
+setting.maxSpeed = 170.0;
+drivePID(76, setting);
+
+// //other side
+Arm2.stop();
+turnPID(91,0.30,0,0);
+setting.maxSpeed = 40.0;
+drivePID(12, setting);
+setting.maxSpeed = 40.0;
+drivePID(-0.5);
+drivePID(1);
+drivePID(-0.5);
+// drivePID(1);
+
+// //go to other side
+// setting.maxSpeed = 60.0;
+// drivePID(-10);
+// turnPID(88,0.30, 0, 0);
+// Arm1.stop();
+// drivePID(-10, setting);
+// turnPID(-90,0.30, 0, 0);
+// setting.maxSpeed = 167.0;
+// drivePID(-70, setting);
+
+// //deposit blocks
+// setting.maxSpeed = 50.0;
+// turnPID(88, 0.30, 0, 0);
+// drivePID(12, setting);
+// turnPID(88,0.30,0,0);
+// spinDT(-100);
+// wait(1, sec);
+// stopDT();
+// Arm2.spin(forward, 100, percent);
+// Arm1.spin(forward,100,percent);
+
+// //next matchload
+// wait(3.5, sec);
+// Arm2.stop();
+// setting.maxSpeed = 40.0;
+// turnPID(-2, 0.26, 0, 0);
+// drivePID(23, setting);
+// drivePID(-0.5);
+// drivePID(1);
+// // drivePID(-0.5);
+// // drivePID(1);
+// turnPID(-2, 0.26, 0, 0);
+// drivePID(-24);
+// Arm2.spin(forward, 100, percent);
+// wait(2.5, sec);
+// drivePID(12);
+// turnPID(125, 0.26, 0, 0);
+// matchloader.set(false);
+// drivePID(-65);
+// drivePID(2);
 // // InertialSensor.setRotation(270, degrees);
 }
 
@@ -268,46 +255,43 @@ void LeftAuton(){
 //nom nom  
 drivePidParams setting = {};
 Arm1.spin(forward,100,percent);
-drivePID(19);
-setting.maxSpeed = 30.0;
-drivePID(5, setting);
-turnPID(90,0.26,0,0);
-drivePID(22.5);
-turnPID(67,0.26,0,0);
-drivePID(-9);
+setting.maxSpeed = 60.0;
+drivePID(25, setting);
+turnPID(90,0.30,0,0);
+drivePID(21);
+turnPID(67,0.3,0,0);
+drivePID(-7);
 Arm2.spin(forward, 100, percent);
-wait(2, sec);
+wait(1.5, sec);
 descorer.set(true);
-drivePID(7);
-turnPID(90,0.26,0,0);
+drivePID(4.5);
+turnPID(90,0.30,0,0);
 drivePID(-8.5, setting);
-setting.maxSpeed = 30.0;
-turnPID(-95,0.26,0,0);
+setting.maxSpeed = 70.0;
+turnPID(-88,0.30,0,0);
 descorer.set(false);
-drivePID(-20);
+drivePID(-22);
 }
 
 void RightAuton(){
 drivePidParams setting = {};
 Arm1.spin(forward,100,percent);
-drivePID(19);
-setting.maxSpeed = 30.0;
-drivePID(5, setting);
-turnPID(-90,0.26,0,0);
-drivePID(22.5);
-turnPID(-67,0.26,0,0);
-drivePID(-10);
+setting.maxSpeed = 60.0;
+drivePID(25, setting);
+turnPID(-90,0.30,0,0);
+drivePID(22);
+turnPID(-67,0.3,0,0);
+drivePID(-7);
 Arm2.spin(forward, 100, percent);
-wait(2, sec);
+wait(1.5, sec);
 descorer.set(true);
-drivePID(7);
-turnPID(-90,0.26,0,0);
-drivePID(8.5, setting);
-setting.maxSpeed = 30.0;
-turnPID(94,0.26,0,0);
+drivePID(4.5);
+turnPID(90,0.30,0,0);
+drivePID(-8.5, setting);
+setting.maxSpeed = 70.0;
+turnPID(-88,0.30,0,0);
 descorer.set(false);
-setting.maxSpeed = 95.0;
-drivePID(-20, setting);
+drivePID(-21);
 //i dont no if it commited 
 }
 
