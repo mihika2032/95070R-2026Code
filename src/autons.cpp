@@ -22,12 +22,12 @@ setting.maxSpeed = 30.0;
 drivePID(-0.5);
 drivePID(1);
 drivePID(-0.5);
-// drivePID(1);
+drivePID(1);
 
 // //go to other side
 setting.maxSpeed = 60.0;
 drivePID(-10, setting);
-turnPID(88,0.30, 0, 0);
+turnPID(89,0.30, 0, 0);
 Arm1.stop();
 drivePID(-10, setting);
 turnPID(-88,0.30, 0, 0);
@@ -37,7 +37,7 @@ drivePID(-70, setting);
 // //deposit blocks
 setting.maxSpeed = 50.0;
 turnPID(88, 0.30, 0, 0);
-drivePID(11, setting);
+drivePID(10.5, setting);
 turnPID(90,0.30,0,0);
 spinDT(-100);
 wait(1, sec);
@@ -60,7 +60,7 @@ drivePID(-23);
 Arm2.spin(forward, 90, percent);
 wait(3,sec);
 drivePID(12);
-turnPID(-80, 0.30, 0, 0);
+turnPID(-88, 0.30, 0, 0);
 setting.maxSpeed = 170.0;
 drivePID(76, setting);
 
@@ -75,26 +75,26 @@ drivePID(1);
 drivePID(-0.5);
 // drivePID(1);
 
-// //go to other side
-// setting.maxSpeed = 60.0;
-// drivePID(-10);
-// turnPID(88,0.30, 0, 0);
-// Arm1.stop();
-// drivePID(-10, setting);
-// turnPID(-90,0.30, 0, 0);
-// setting.maxSpeed = 167.0;
-// drivePID(-70, setting);
+//go to other side
+setting.maxSpeed = 60.0;
+drivePID(-10);
+turnPID(88,0.30, 0, 0);
+Arm1.stop();
+drivePID(-10, setting);
+turnPID(-90,0.30, 0, 0);
+setting.maxSpeed = 167.0;
+drivePID(-70, setting);
 
-// //deposit blocks
-// setting.maxSpeed = 50.0;
-// turnPID(88, 0.30, 0, 0);
-// drivePID(12, setting);
-// turnPID(88,0.30,0,0);
-// spinDT(-100);
-// wait(1, sec);
-// stopDT();
-// Arm2.spin(forward, 100, percent);
-// Arm1.spin(forward,100,percent);
+//deposit blocks
+setting.maxSpeed = 50.0;
+turnPID(88, 0.30, 0, 0);
+drivePID(12, setting);
+turnPID(88,0.30,0,0);
+spinDT(-100);
+wait(1, sec);
+stopDT();
+Arm2.spin(forward, 100, percent);
+Arm1.spin(forward,100,percent);
 
 // //next matchload
 // wait(3.5, sec);
