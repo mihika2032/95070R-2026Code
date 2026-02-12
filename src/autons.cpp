@@ -289,10 +289,10 @@ drivePID(4.5);
 turnPID(90,0.30,0,0);
 drivePID(-8.5, setting);
 setting.maxSpeed = 70.0;
-turnPID(-88,0.30,0,0);
+turnPID(-89,0.30,0,0);
 descorer.set(false);
 drivePID(-21);
-//i dont no if it commited 
+//i dont no if it commited */
 }
 
 

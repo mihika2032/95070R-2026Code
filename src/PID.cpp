@@ -59,7 +59,7 @@ void drivePID(double targetInches, drivePidParams param ,double kP, double kI, d
 }
 
 
-void turnPID(double targetAngle, double kP = 0.1, double kI = 0, double kD = 0.) {
+void turnPID(double targetAngle, double kP = 0.1, double kI = 0.03, double kD = 0.) {
   
   //double dir =targetAngle/fabs(targetAngle);
  
