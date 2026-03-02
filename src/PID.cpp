@@ -6,7 +6,7 @@
 
 using namespace vex;
 
-void drivePID(double targetInches, drivePidParams param ,double kP, double kI, double kD) {
+void drivePID(double targetInches, drivePidParams param, double kP, double kI, double kD) {
 // void drivePID(double targetInches, double kP, double kI, double kD); 
 //dis /*int timeout*/ goes next to double kD
 

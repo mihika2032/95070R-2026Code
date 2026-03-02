@@ -110,21 +110,20 @@ void usercontrol(void) {
   bool descorerExtended = false;
   bool matchloaderExtended = false;
  
+  //single joystick
   while (1){
     double fwd = Controller.Axis3.position();
     double turn = Controller.Axis4.position();
-    //double turn = Controller.Axis1.position(); (for tank drive)
-
 
     double left = fwd + turn *0.7;
     double right = fwd - turn *0.7;
     if(fabs(right) < 5 && fabs(left) > 5){
-      RB.stop(brake);
-      RF.stop(brake);
-      RM.stop(brake);
-      LB.stop(brake);
-      LF.stop(brake);
-      LM.stop(brake);
+      RB.stop(coast);
+      RF.stop(coast);
+      RM.stop(coast);
+      LB.stop(coast);
+      LF.stop(coast);
+      LM.stop(coast);
     }
     else{
       RF.spin(forward, right, percent);
@@ -135,7 +134,55 @@ void usercontrol(void) {
       LM.spin(forward, left, percent);
     }
     wait(20, msec);
-    
+
+
+//arcade
+  //  while (1){
+  //   double fwd = Controller.Axis3.position();
+  //   double turn = Controller.Axis1.position();
+
+  //   double left = fwd + turn *0.7;
+  //   double right = fwd - turn *0.7;
+  //   if(fabs(right) < 5 && fabs(left) > 5){
+  //     RB.stop(brake);
+  //     RF.stop(brake);
+  //     RM.stop(brake);
+  //     LB.stop(brake);
+  //     LF.stop(brake);
+  //     LM.stop(brake);
+  //   }
+  //   else{
+  //     RF.spin(forward, right, percent);
+  //     RB.spin(forward, right, percent);
+  //     RM.spin(forward, right, percent);
+  //     LF.spin(forward, left, percent);
+  //     LB.spin(forward, left, percent);
+  //     LM.spin(forward, left, percent);
+  //   }
+  //   wait(20, msec);
+
+  //tank drive
+//     while (1) {
+//     double right = Controller.Axis2.position();
+//     double left = Controller.Axis3.position();
+// //dead spot
+//     if(fabs(right) < 15 && fabs(left) <5){
+//       RB.stop(coast);
+//       RF.stop(coast);
+//       RM.stop(coast);
+//       LB.stop(coast);
+//       LF.stop(coast);
+//       LM.stop(coast);
+//     }
+
+//     else{
+//       RF.spin(forward, right, percent);
+//       RB.spin(forward, right, percent);
+//       RM.spin(forward, right, percent);
+//       LF.spin(forward, left, percent);
+//       LB.spin(forward, left, percent);
+//       LM.spin(forward, left, percent);
+//     }
     //  //========== DRIVE CONTROL ========== //
     // double fwd = Controller.Axis3.position();
     // double turn = Controller.Axis4.position() * 0.5;
@@ -155,7 +202,7 @@ void usercontrol(void) {
       Arm1.spin(reverse, 100, percent);
       Arm2.spin(reverse, 100, percent);
     } 
-    else if (Controller.ButtonL2.pressing()) {
+    else if (Controller.ButtonX.pressing()) {
        Arm1.stop(hold);
        Arm2.spin(forward, 100, percent);
     }
@@ -175,7 +222,7 @@ void usercontrol(void) {
       wait(0.3, sec);
     }
     
-    if (!Controller.ButtonX.pressing() && prevPressed){
+    if (!Controller.ButtonL2.pressing() && prevPressed){
       prevPressed = false;
       wait(0.3, sec);
     }
