@@ -59,24 +59,27 @@ void autonomous(void) {
   
   switch (getSelectedAuton()) {
     case 0:
-      Skills();
+      fern();
       break;
     case 1:
-      SkillsParking();
+      Skills();
       break;
     case 2:
-      HighGoalRAuton();
+      SkillsParking();
       break;
     case 3:
-      HighGoalLAuton();
+      HighGoalRAuton();
       break;
     case 4:
+      HighGoalLAuton();
+      break;
+    case 5:
       // SkillsParking();
       // break;
     // case 5:
       LeftAuton();
       break;
-    case 5:
+    case 6:
       RightAuton();
       break;
 
