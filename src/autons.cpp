@@ -101,14 +101,14 @@ drivePID(-70);
 // drivePID(23, setting);
 // drivePID(-0.5);
 // drivePID(1);
-turnPID(2, 0.30, 0, 0);
-drivePID(-23);
-Arm2.spin(forward, 90, percent);
-wait(3,sec);
-drivePID(12);
-turnPID(-88, 0.30, 0, 0);
-setting.maxSpeed = 170.0;
-drivePID(76, setting);
+// turnPID(2, 0.30, 0, 0);
+// drivePID(-23);
+// Arm2.spin(forward, 90, percent);
+// wait(3,sec);
+// drivePID(12);
+// turnPID(-88, 0.30, 0, 0);
+// setting.maxSpeed = 170.0;
+// drivePID(76, setting);
 
 // // //other side
 // Arm2.stop();
