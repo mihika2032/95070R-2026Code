@@ -20,9 +20,9 @@ drivePID(-5);
 Arm2.spin(forward,100,percent);
 wait(2.5,sec);
 drivePID(35);
-turnPID(-45,0.26,0,0);
+turnPID(-135,0.26,0,0);
 drivePID(10,setting);
-turnPID(135,0.26,0,0);
+
 
 
 
