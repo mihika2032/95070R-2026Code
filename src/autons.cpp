@@ -9,8 +9,28 @@
  //   180
 using namespace vex;
 
-void fern (){}
+void sevenblock(){
+drivePidParams setting = {};
+Arm1.spin(forward,100,percent);
+drivePID(19);
+setting.maxSpeed = 30.0;
+drivePID(5,setting);
+turnPID(180,0.26,0,0);
+drivePID(-5);
+Arm2.spin(forward,100,percent);
+wait(2.5,sec);
+drivePID(35);
+turnPID(-45,0.26,0,0);
+drivePID(10,setting);
+turnPID(135,0.26,0,0);
+
+
+
+}
+
+void fern (){
 drivePID(1);
+}
 
 void Skills(){
 drivePidParams setting = {};

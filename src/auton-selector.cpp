@@ -5,11 +5,11 @@
 
 int selectedAuton = 0;
 
-const char* autonNames[] = {"fern", "Skills","SkillsParking", "HighGoalRAuton", "HighGoalLAuton","LeftAuton","RightAuton"};
-const int autonCount = 7;
+const char* autonNames[] = {"sevenblock","fern", "Skills","SkillsParking", "HighGoalRAuton", "HighGoalLAuton","LeftAuton","RightAuton"};
+const int autonCount = 8;
 using namespace vex;
 
-int getSelectedAuton() {
+int getSelectedAuton() {  
   return selectedAuton;
   //make sure to press right auton//
 }
