@@ -208,7 +208,7 @@ void usercontrol(void) {
       Arm1.spin(reverse, 100, percent);
       Arm2.spin(reverse, 100, percent);
     } 
-    else if (Controller.ButtonX.pressing()) {
+    else if (Controller.ButtonL2.pressing()) {
        Arm1.stop(hold);
        Arm2.spin(forward, 100, percent);
     }
@@ -257,8 +257,9 @@ void usercontrol(void) {
     // }
 
     wait(30, msec);
+    }
   }
-}
+
 
 int main() {
   // Set up callbacks for autonomous and driver control periods.

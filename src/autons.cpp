@@ -15,7 +15,7 @@ Arm1.spin(forward,100,percent);
 drivePID(19);
 setting.maxSpeed = 30.0;
 drivePID(5,setting);
-turnPID(180,0.26,0,0);
+turnPID(90,0.26,0,0);
 drivePID(-5);
 Arm2.spin(forward,100,percent);
 wait(2.5,sec);
