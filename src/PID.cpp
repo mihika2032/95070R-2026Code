@@ -3,6 +3,7 @@
 #include "vex.h"
 #include "functions.h"
 #include "PID.h"
+#include <iostream>
 
 using namespace vex;
 
@@ -58,6 +59,45 @@ void drivePID(double targetInches, drivePidParams param, double kP, double kI, d
 
 }
 
+void stop(){
+Arm1.stop();
+Arm2.stop();  
+}
+
+void intakeLongGoal(double time){
+timer intakeTimer;
+intakeTimer.clear();
+
+Arm1.spin(forward, 100, percent);
+Arm2.spin(forward, 100, percent);
+wait(500, msec);
+
+while((intakeTimer.time(msec)< time))
+{if (fabs(Arm1.velocity(percent)> 3 && fabs(Arm2.velocity(percent))))
+
+{
+
+  wait(100, msec);
+    }
+    // motor jam
+    else
+    {
+      wait(200, msec);
+      std::cout << "Motor jammed. Velocity of Arm1 is:" << Arm1.velocity(percent) << "and Arm2 is:" << Arm2.velocity(percent) << std::endl;
+      // motor jam - run anti jamming
+      if (fabs(Arm1.velocity(percent)) < 3 || fabs(Arm2.velocity(percent) < 3))
+      {
+        Arm1.spin(reverse, 60, percent);
+        Arm2.spin(reverse, 100, percent);
+        wait(200, msec);
+        Arm1.spin(forward, 100, percent);
+        Arm2.spin(forward, 100, percent);
+      }
+    }
+  }
+  stop();
+}
+
 
 void turnPID(double targetAngle, double kP = 0.1, double kI = 0.03, double kD = 0.) {
   
@@ -107,6 +147,7 @@ void turnPID(double targetAngle, double kP, double kI, double kD) ;
   Controller.Screen.print(targetAngle);
 
   stopDT();
+  stop();
 
 }
 
