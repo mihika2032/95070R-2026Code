@@ -288,23 +288,6 @@ void HighGoalLAuton(){
     
 }
    
-    /*void VIOLA IS BETTER IYKYK(){
-      while(true){
-        if(OpticalSensor.brightness()<50){
-          bottomIntakeMotor.spin(forward,100,percent);
-          middleIntakeMotor.spin(reverse,100,percent);
-          topIntakeMotor.spin(forward,100,percent); 
-        }
-        else{
-          bottomIntakeMotor.stop();
-          middleIntakeMotor.stop();
-          topIntakeMotor.stop();
-        }
-        wait(20,msec);
-      }
-    }
-    vex::thread intakejamprevention(VIOLA IS BETTER IYKYK); */
-
 
 
 // void MiddleGoalRAuton(){
@@ -318,7 +301,6 @@ void HighGoalLAuton(){
 //     turnPID(70,0.26,0,0);
 //     drivePID(-10);
 //     Arm2.spin(forward,100,percent);
-
 // }
 
 void LeftAuton(){

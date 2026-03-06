@@ -64,6 +64,8 @@ Arm1.stop();
 Arm2.stop();  
 }
 
+//anti jam code
+
 void intakeLongGoal(double time){
 timer intakeTimer;
 intakeTimer.clear();
