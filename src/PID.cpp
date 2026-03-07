@@ -59,14 +59,14 @@ void drivePID(double targetInches, drivePidParams param, double kP, double kI, d
 
 }
 
-void stop(){
+/*void stop(){
 Arm1.stop();
 Arm2.stop();  
-}
+}*/
 
 //anti jam code
 
-void intakeLongGoal(double time){
+/*void intakeLongGoal(double time){
 timer intakeTimer;
 intakeTimer.clear();
 
@@ -98,7 +98,7 @@ while((intakeTimer.time(msec)< time))
     }
   }
   stop();
-}
+}*/
 
 
 void turnPID(double targetAngle, double kP = 0.1, double kI = 0.03, double kD = 0.) {
@@ -149,7 +149,7 @@ void turnPID(double targetAngle, double kP, double kI, double kD) ;
   Controller.Screen.print(targetAngle);
 
   stopDT();
-  stop();
+  //stop();
 
 }
 

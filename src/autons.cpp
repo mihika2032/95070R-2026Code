@@ -11,17 +11,14 @@ using namespace vex;
 
 void sevenblock(){
 drivePidParams setting = {};
-Arm1.spin(forward,100,percent);
+Arm1.spin(forward,200,percent);
 drivePID(19);
 setting.maxSpeed = 30.0;
 drivePID(5,setting);
-turnPID(90,0.26,0,0);
-drivePID(-5);
+turnPID(120.5,0.26,0,0);
+drivePID(-9);
 Arm2.spin(forward,100,percent);
-wait(2.5,sec);
-drivePID(35);
-turnPID(-135,0.26,0,0);
-drivePID(10,setting);
+
 //😳
 
 
