@@ -195,12 +195,12 @@ void usercontrol(void) {
       descorerExtended = !descorerExtended;
       prevPressed = true;
       descorer.set(descorerExtended);
-      wait(0.3, sec);
+      wait(0.1, sec);
     }
     
-    if (!Controller.ButtonL2.pressing() && prevPressed){
+    if (!Controller.ButtonX.pressing() && prevPressed){
       prevPressed = false;
-      wait(0.3, sec);
+      wait(0.1, sec);
     }
 
     if (Controller.ButtonB.pressing() && !prevPressed){
