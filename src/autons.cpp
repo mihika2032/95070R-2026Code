@@ -25,7 +25,9 @@ Arm2.spin(forward,100,percent);
 }
 
 void fern (){
-//🦊
+drivePidParams setting = {};
+drivePID(10);   
+//         
 }
 
 void Skills(){
@@ -89,51 +91,7 @@ void SkillsParking(){
   stopDT();
   drivePID(1);
 
-  /*drivePID(-10);
-  drivePID(5);
-  drivePID(-15);
-  drivePID(10);
-  drivePID(-14);
-  drivePID(5);
-  drivePID(-17);
-  drivePID(3);
-  drivePID(-5);
-  drivePID(3);*/
   
- 
-
-
-//   drivePidParams setting = {};
-//   Arm1.spin(forward,100,percent);
-//   drivePID(19);
-//   setting.maxSpeed = 30.0;
-//   drivePID(5, setting);
-//   turnPID(-90,0.26,0,0);
-//   drivePID(24);
-//   turnPID(-56,0.26,0,0);
-//   drivePID(-12);
-//   Arm2.spin(forward,100,percent); 
-//   wait(3, sec);
-//   Arm2.stop(hold);
-//   turnPID(1,0.26,0,0);
-//   matchloader.set(true);
-//   setting.maxSpeed = 70.0;
-//   drivePID(25.5);
-//   drivePID(-0.5);
-//   drivePID(1);
-//   drivePID(-1);
-//   drivePID(1);
-//   drivePID(-0.8);
-//   drivePID(0.8);
-//   drivePID(-0.9);
-//   drivePID(0.9);
-//   drivePID(-1);
-//   drivePID(1);
-//   Arm1.spin(forward,100,percent);
-//   Arm2.spin(forward,100,percent);
-//   drivePID(-10);
-//   turnPID(120 ,0.26,0,0);
-//   drivePID(-50);
 }
 
                                                                                     

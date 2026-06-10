@@ -88,7 +88,7 @@ void usercontrol(void) {
   //single joystick
   while (1){
     double fwd = Controller.Axis3.position();
-    double turn = Controller.Axis4.position();
+    double turn = Controller.Axis1.position();
 
     double left = fwd + turn *0.7;
     double right = fwd - turn *0.7;
